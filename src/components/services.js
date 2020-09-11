@@ -19,6 +19,13 @@ const InnerServices = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 5rem;
   }
+
+  @media screen and (max-width: 420px) {
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
 `
 
 const ServicesList = styled.div`
@@ -65,6 +72,26 @@ const ServicesList = styled.div`
       bottom: 10px;
       right: 20px;
       color: ${({ theme }) => theme.colors.accent};
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+    grid-gap: 1rem;
+
+    div {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    div {
+      height: 250px;
+
+      h3 {
+        margin-top: 0;
+      }
     }
   }
 `

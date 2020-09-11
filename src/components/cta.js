@@ -10,18 +10,48 @@ const StyledCTA = styled.section`
   padding: 8rem 0;
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.offWhite};
+
+  @media screen and (max-width: 420px) {
+    padding: 5rem 0 8rem 0;
+  }
 `
 
 const InnerCTA = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 769px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+  }
 `
 
 const CTAImage = styled.div`
   max-width: 450px;
   flex-grow: 1;
   position: relative;
+
+  @media screen and (max-width: 769px) {
+    max-width: 600px;
+    width: 100%;
+
+    .people-img {
+      height: 450px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+
+    .people-img {
+      width: 100%;
+      height: auto;
+    }
+  }
 `
 
 const CTADetails = styled.div`
@@ -37,6 +67,15 @@ const CTADetails = styled.div`
     line-height: ${({ theme }) => theme.lineheights.body};
     opacity: 87%;
     font-size: 0.875rem;
+  }
+
+  @media screen and (max-width: 769px) {
+    margin: 6rem 0 0 0;
+    max-width: 600px;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin: 3.5rem 0 0 0;
   }
 `
 
@@ -55,6 +94,18 @@ const CTAButton = styled(Button)`
 
   svg {
     margin-left: 3rem;
+  }
+
+  @media screen and (max-width: 769px) {
+    right: 50%;
+    bottom: -30px;
+    transform: translateX(50%);
+  }
+
+  @media screen and (max-width: 420px) {
+    right: 50%;
+    bottom: -20px;
+    transform: translateX(50%);
   }
 `
 
@@ -79,6 +130,7 @@ export default function CTA() {
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="people doing business"
+              className="people-img"
             />
             <CTAButton withIcon>
               Contact Us <BsArrowRight size="1.5rem" />
