@@ -13,11 +13,20 @@ const StyledHero = styled.section`
   padding: 1rem 0 5rem 0;
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.offWhite};
+
+  @media screen and (max-width: 420px) {
+    padding: 2.5rem 0 5rem 0;
+  }
 `
 
 const InnerHero = styled.div`
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 420px) {
+    padding: 0 1rem;
+    flex-direction: column;
+  }
 `
 
 const HeroDetails = styled.div`
@@ -33,6 +42,21 @@ const HeroDetails = styled.div`
   p {
     line-height: ${({ theme }) => theme.lineheights.body};
     margin-bottom: 3.5rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 1.8;
+    }
   }
 `
 
@@ -58,6 +82,25 @@ const HeroImageContainer = styled.div`
     right: -20px;
     display: block;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-top: 3.5rem;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .big-box {
+      width: 80px;
+      height: 80px;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+    }
   }
 `
 
@@ -94,6 +137,7 @@ export default function Hero() {
             <Img
               fluid={data.heroImg.childImageSharp.fluid}
               alt="blue building"
+              className="hero-img"
             />
             <img src={BigBox} alt="blue big box" className="big-box" />
           </HeroImageContainer>
