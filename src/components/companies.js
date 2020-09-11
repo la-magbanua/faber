@@ -17,6 +17,12 @@ const InnerCompanies = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 5rem;
   }
+
+  @media screen and (max-width: 420px) {
+    h2 {
+      text-align: center;
+    }
+  }
 `
 
 const CompaniesList = styled.div`
@@ -44,6 +50,15 @@ const CompaniesList = styled.div`
       font-size: 14px;
       opacity: 80%;
     }
+  }
+
+  @media screen and (max-width: 769px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    grid-template-columns: 1fr;
   }
 `
 
