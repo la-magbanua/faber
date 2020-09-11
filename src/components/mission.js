@@ -13,11 +13,30 @@ const InnerMission = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+  }
 `
 
 const MissionImage = styled.div`
   max-width: 400px;
   flex-grow: 1;
+
+  .mission-img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 769px) {
+  }
+
+  @media screen and (max-width: 420px) {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 2rem;
+  }
 `
 
 const MissionDetails = styled.div`
@@ -28,6 +47,18 @@ const MissionDetails = styled.div`
     line-height: ${({ theme }) => theme.lineheights.body};
     color: ${({ theme }) => theme.colors.primary};
     opacity: 87%;
+  }
+
+  @media screen and (max-width: 769px) {
+    margin-left: 3rem;
+    font-size: 0.875rem;
+    max-width: 450px;
+  }
+
+  @media screen and (max-width: 420px) {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
   }
 `
 
@@ -64,6 +95,7 @@ export default function Mission() {
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="mission building"
+              className="mission-img"
             />
           </MissionImage>
           <MissionDetails>
