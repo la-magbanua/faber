@@ -5,6 +5,10 @@ const StyledContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
+  @media screen and (max-width: 769px) {
+    padding: 0 1.2rem;
+  }
+
   @media screen and (max-width: 420px) {
     padding: 0 1.2rem;
   }

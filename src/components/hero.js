@@ -44,6 +44,15 @@ const HeroDetails = styled.div`
     margin-bottom: 3.5rem;
   }
 
+  @media screen and (max-width: 769px) {
+    max-width: 500px;
+    margin-right: 2rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     max-width: 100%;
     width: 100%;
@@ -82,6 +91,23 @@ const HeroImageContainer = styled.div`
     right: -20px;
     display: block;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 769px) {
+    max-width: 250px;
+    width: 100%;
+
+    .big-box {
+      width: 90px;
+      height: 90px;
+      bottom: -15px;
+      right: -15px;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   @media screen and (max-width: 420px) {
