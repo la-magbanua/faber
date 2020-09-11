@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { useMediaQuery } from 'react-responsive'
+import { IoIosMenu } from 'react-icons/io'
 import styled from 'styled-components'
 import Container from './container'
 
@@ -41,22 +43,39 @@ const NavLinks = styled.div`
   }
 `
 
-const Header = () => (
-  <StyledHeader>
-    <Container>
-      <InnerHeader>
-        <Brand>
-          <Link to="/">F.</Link>
-        </Brand>
-        <NavLinks>
-          <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Services</Link>
-          <Link to="/">Contact</Link>
-        </NavLinks>
-      </InnerHeader>
-    </Container>
-  </StyledHeader>
-)
+const MenuBurger = styled.span`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`
+
+const Header = () => {
+  const isMobile = useMediaQuery({ maxWidth: 500 })
+
+  return (
+    <StyledHeader>
+      <Container>
+        <InnerHeader>
+          <Brand>
+            <Link to="/">F.</Link>
+          </Brand>
+          {isMobile ? (
+            <MenuBurger>
+              <IoIosMenu size="1.3rem" />
+            </MenuBurger>
+          ) : (
+            <NavLinks>
+              <Link to="/">Home</Link>
+              <Link to="/">About</Link>
+              <Link to="/">Services</Link>
+              <Link to="/">Contact</Link>
+            </NavLinks>
+          )}
+        </InnerHeader>
+      </Container>
+    </StyledHeader>
+  )
+}
 
 export default Header
