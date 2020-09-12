@@ -7,6 +7,10 @@ const StyledFooter = styled.footer`
   padding-top: 5rem;
   background: ${({ theme }) => theme.colors.offWhite};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media screen and (max-width: 420px) {
+    padding-top: 2rem;
+  }
 `
 
 const InnerFooter = styled.div`
@@ -23,6 +27,12 @@ const FooterLinks = styled.div`
   align-items: center;
   padding: 0 3rem;
   margin-bottom: 5rem;
+
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: initial;
+  }
 `
 
 const FooterCopy = styled.div`
@@ -40,6 +50,10 @@ const FooterBrand = styled.p`
     font-family: ${({ theme }) => theme.fonts.heading};
     color: ${({ theme }) => theme.colors.primary};
     font-weight: ${({ theme }) => theme.fontWeights.black};
+  }
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 3rem;
   }
 `
 
