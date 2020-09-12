@@ -17,6 +17,20 @@ const InnerContact = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 769px) {
+    max-width: 100%;
+    width: 98%;
+    padding: 8rem 2rem;
+    justify-content: initial;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 3rem 0;
+    margin: 0;
+  }
 `
 
 const ContactDetails = styled.div`
@@ -32,11 +46,53 @@ const ContactDetails = styled.div`
     opacity: 87%;
     line-height: ${({ theme }) => theme.lineheights.body};
   }
+
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+    width: 100%;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      opacity: 87%;
+      line-height: ${({ theme }) => theme.lineheights.body};
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 80%;
+    padding: 0;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      opacity: 87%;
+      line-height: ${({ theme }) => theme.lineheights.body};
+    }
+  }
 `
 
 const ContactForm = styled.div`
   width: 80%;
   margin-left: 5rem;
+
+  @media screen and (max-width: 769px) {
+    width: 40%;
+    margin-left: 5rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 80%;
+    margin: 3rem auto;
+    padding: 0;
+  }
 `
 
 const FormField = styled.div`
@@ -83,7 +139,7 @@ const ContactButton = styled(Button)`
 export default function Contact() {
   return (
     <StyledContact>
-      <Container>
+      <Container nopadding>
         <InnerContact>
           <ContactDetails>
             <h2>Tell us more about your business needs</h2>
